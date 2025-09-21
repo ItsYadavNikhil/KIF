@@ -377,7 +377,11 @@ function Router() {
       {!isAdminRoute && <AIChat />}
     </div>
   );
-}
+} 
+
+  //Nikhil Router Function
+  
+  
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);

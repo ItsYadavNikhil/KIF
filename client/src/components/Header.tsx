@@ -54,7 +54,7 @@ export default function Header({ user, onAuthClick, onMenuClick }: HeaderProps) 
           </div>
 
           {/* Navigation Links - Only show when logged in */}
-          {user && (
+          
             <div className="hidden lg:flex items-center gap-1">
               <Button variant="ghost" size="sm" asChild>
                 <a href="/feed" data-testid="nav-feed">Feed</a>
@@ -72,37 +72,9 @@ export default function Header({ user, onAuthClick, onMenuClick }: HeaderProps) 
                 <a href="/discounts" data-testid="nav-discounts">Discounts</a>
               </Button>
             </div>
-          )}
+          
 
-          {/* User Actions */}
-          <div className="flex items-center gap-2">
-            {user ? (
-              <>
-                <Button variant="ghost" size="icon" data-testid="button-notifications">
-                  <Bell className="h-5 w-5" />
-                </Button>
-                <Avatar className="w-8 h-8" data-testid="avatar-user">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback>
-                    {user.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                  </AvatarFallback>
-                </Avatar>
-                {user.verified && (
-                  <div className="w-2 h-2 bg-green-500 rounded-full" data-testid="status-verified" />
-                )}
-              </>
-            ) : (
-              <>
-                <Button variant="ghost" onClick={onAuthClick} data-testid="button-login">
-                  <User className="h-4 w-4 mr-2" />
-                  Sign In
-                </Button>
-                <Button onClick={onAuthClick} data-testid="button-register">
-                  Get Started
-                </Button>
-              </>
-            )}
-          </div>
+          
         </div>
       </div>
     </header>

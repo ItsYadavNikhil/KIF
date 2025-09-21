@@ -16,6 +16,10 @@ import UploadPDF from "./components/UploadPDF";
 import YouTubeSearch from "./components/YouTubeSearch";
 import AdminPanel from "./components/AdminPanel";
 import AIChat from "./components/AIChat";
+import Feed from "./components/Feed";
+import RatingSystem from "./components/RatingSystem";
+import Discounts from "./components/Discounts";
+import Community from "./components/Community";
 
 // Pages
 function HomePage() {
@@ -150,6 +154,116 @@ function Router() {
     }
   ];
 
+  const mockFeedNotes = [
+    {
+      id: "1",
+      title: "Calculus: Limits and Continuity - Complete Study Guide", 
+      subject: "Mathematics",
+      author: "Sarah Chen",
+      searchedAt: "2 hours ago",
+      rating: 4.8,
+      downloads: 1245
+    },
+    {
+      id: "2",
+      title: "Physics: Laws of Motion and Forces",
+      subject: "Physics",
+      author: "Mike Rodriguez", 
+      searchedAt: "1 day ago",
+      rating: 4.6,
+      downloads: 892
+    }
+  ];
+
+  const mockRecentVideos = [
+    {
+      id: "1",
+      title: "Calculus - Complete Tutorial for Beginners",
+      channel: "EduChannel Pro",
+      watchedAt: "1 hour ago",
+      duration: "25:43",
+      topic: "Mathematics"
+    },
+    {
+      id: "2",
+      title: "Advanced Physics Concepts Explained", 
+      channel: "Study Masters",
+      watchedAt: "Yesterday",
+      duration: "18:32",
+      topic: "Physics"
+    }
+  ];
+
+  const mockCoupons = [
+    {
+      id: "1",
+      provider: "SAS",
+      certification: "SAS Certified Data Scientist",
+      category: "Data Analytics",
+      discount: "30% OFF",
+      code: "SAS30STUDENT",
+      description: "Master statistical analysis and machine learning with SAS tools.",
+      validUntil: "Dec 31, 2024",
+      originalPrice: "$299",
+      discountedPrice: "$209",
+      features: [
+        "Statistical Analysis Mastery",
+        "Machine Learning Techniques", 
+        "SAS Programming Skills"
+      ],
+      difficulty: "Advanced" as const
+    },
+    {
+      id: "2",
+      provider: "Oracle",
+      certification: "Oracle Database Administrator",
+      category: "Database",
+      discount: "25% OFF", 
+      code: "ORACLE25EDU",
+      description: "Become proficient in Oracle database administration.",
+      validUntil: "Nov 15, 2024",
+      originalPrice: "$395",
+      discountedPrice: "$296",
+      features: [
+        "Database Installation & Config",
+        "Backup & Recovery",
+        "Performance Tuning"
+      ],
+      difficulty: "Intermediate" as const
+    }
+  ];
+
+  const mockStudents = [
+    {
+      id: "1",
+      name: "Sarah Chen",
+      university: "Stanford University",
+      major: "Computer Science",
+      year: "Junior",
+      subjects: ["Data Structures", "Algorithms", "Machine Learning"],
+      studyGroups: 3,
+      notesShared: 15,
+      isFollowing: false,
+      location: "Palo Alto, CA"
+    }
+  ];
+
+  const mockStudyGroups = [
+    {
+      id: "1",
+      name: "Advanced Calculus Study Group",
+      subject: "Mathematics", 
+      description: "Weekly meetings to solve challenging calculus problems.",
+      members: 8,
+      maxMembers: 12,
+      creator: "Alex Kumar",
+      createdAt: "2 weeks ago",
+      nextMeeting: "Tomorrow 7:00 PM",
+      isJoined: false,
+      tags: ["calculus", "problem-solving", "weekly"]
+    }
+  ];
+
   const handleAuth = (data: any) => {
     console.log('Auth data:', data);
     setUser(mockUser); // Mock login
@@ -181,11 +295,35 @@ function Router() {
             onViewNote={(id) => console.log('View note:', id)}
           />
         </Route>
+        <Route path="/feed">
+          <Feed
+            recentNotes={mockFeedNotes}
+            recentVideos={mockRecentVideos}
+            onNoteClick={(id) => console.log('View recent note:', id)}
+            onVideoClick={(id) => console.log('Play recent video:', id)}
+          />
+        </Route>
         <Route path="/notes">
           <NotesGallery
             notes={mockNotes}
             onDownload={(id) => console.log('Download note:', id)}
             onPreview={(id) => console.log('Preview note:', id)}
+          />
+        </Route>
+        <Route path="/community">
+          <Community
+            students={mockStudents}
+            studyGroups={mockStudyGroups}
+            onFollowStudent={(id) => console.log('Follow student:', id)}
+            onJoinGroup={(id) => console.log('Join group:', id)}
+            onCreateGroup={(data) => console.log('Create group:', data)}
+            onMessageStudent={(id) => console.log('Message student:', id)}
+          />
+        </Route>
+        <Route path="/discounts">
+          <Discounts
+            coupons={mockCoupons}
+            onRedeemCoupon={(id) => console.log('Redeem coupon:', id)}
           />
         </Route>
         <Route path="/upload">

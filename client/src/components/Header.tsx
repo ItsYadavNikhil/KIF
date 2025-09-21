@@ -53,6 +53,27 @@ export default function Header({ user, onAuthClick, onMenuClick }: HeaderProps) 
             </div>
           </div>
 
+          {/* Navigation Links - Only show when logged in */}
+          {user && (
+            <div className="hidden lg:flex items-center gap-1">
+              <Button variant="ghost" size="sm" asChild>
+                <a href="/feed" data-testid="nav-feed">Feed</a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="/notes" data-testid="nav-notes">Notes</a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="/videos" data-testid="nav-videos">Videos</a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="/community" data-testid="nav-community">Community</a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild>
+                <a href="/discounts" data-testid="nav-discounts">Discounts</a>
+              </Button>
+            </div>
+          )}
+
           {/* User Actions */}
           <div className="flex items-center gap-2">
             {user ? (

@@ -1,0 +1,45 @@
+Here’s a strong, detailed prompt you can use to guide an AI (like ChatGPT, Claude, or any AI product developer assistant) to help you build this prototype web app:  
+
+***
+
+**Prompt for Prototype Development**
+
+"I want to design and build a prototype for a student-focused web platform with the following features:  
+
+1. **User Registration & Verification**  
+   - Students can register by providing their name, mobile number, and password.  
+   - During registration, students must upload a clear image of their student ID card.  
+   - The uploaded ID card should be sent to a backend verification workflow, where our internal team can approve or reject the account based on authenticity.  
+
+2. **Student Dashboard**  
+   - Once verified, the student gains access to a personal dashboard.  
+   - The dashboard should allow them to create and manage their profile.  
+
+3. **Notes Upload & Publication**  
+   - Students can upload and publish their own handwritten study notes (as images or PDFs).  
+   - Before becoming public, these notes must go through a screening/approval process by our backend team (to ensure originality and quality).  
+   - After approval, notes will be available in a publicly viewable section accessible by everyone.  
+
+4. **YouTube API Integration**  
+   - The platform should include a feature where students can search for YouTube videos or playlists related to academic and study topics.  
+   - The integration should use the official YouTube Data API to fetch and display relevant top results directly on the platform.  
+
+5. **Overall Requirements**  
+   - Suggest the best tech stack for a quick prototype (preferred: modern web framework + simple backend).  
+   - Include user authentication, file upload handling, admin verification features, and basic search functionality.  
+   - The UI should be minimal, clean, and student-friendly.  
+
+Based on this description, I need:  
+- A recommended architecture (frontend + backend + database).  
+- Example database schema for key entities (students, notes, verification, etc.).  
+- Code boilerplate or step-by-step setup instructions for quickly prototyping this app.  
+- Example code snippets for key parts (user registration with ID upload, YouTube API search integration, and note approval workflow).  
+- A simple way to make this demo deployable (for example, using Vercel/Netlify for frontend and a lightweight backend like Node/Express or Firebase).  
+
+Please provide a guided blueprint and implementation outline that will help me test this prototype quickly while ensuring scalability for future expansion."  
+
+***
+
+Would you like me to also **draft a sample architecture (with database schema and simple workflow diagrams)** along with this prompt so you immediately have a technical blueprint to start building?
+
+Sources

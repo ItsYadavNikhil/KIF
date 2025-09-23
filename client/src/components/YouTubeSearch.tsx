@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const YOUTUBE_API_KEY = "AIzaSyBsqTyS-UQ7N6uoFB9m3bw2gohy6kKR038";
+const YOUTUBE_API_KEY = "/YOUR YOUTUBE_DATA_V3_API KEY HERE/";
 const YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/search";
 
 function YouTubeSearch() {
